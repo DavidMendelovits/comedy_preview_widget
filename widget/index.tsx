@@ -11,6 +11,17 @@ const roots: Map<string | HTMLElement, Root> = new Map()
 function init(config: ComedyWidgetConfig): void {
   const { container, ...props } = config
 
+  // Validate required fields
+  if (!props.comedianId && !props.comedianName) {
+    console.error('[ComedyWidget] Either comedianId or comedianName is required')
+    return
+  }
+
+  if (!props.ticketUrl) {
+    console.error('[ComedyWidget] ticketUrl is required')
+    return
+  }
+
   // Find container element
   const containerElement =
     typeof container === 'string'
@@ -32,7 +43,7 @@ function init(config: ComedyWidgetConfig): void {
   const root = createRoot(containerElement)
   roots.set(container, root)
 
-  root.render(<ComedyWidget {...props} container={container} />)
+  root.render(<ComedyWidget {...props} />)
 }
 
 /**

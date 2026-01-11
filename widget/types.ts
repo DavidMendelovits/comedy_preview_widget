@@ -1,14 +1,17 @@
 export interface ComedyWidgetConfig {
-  widgetKey: string
+  // Comedian lookup - one of these is required
+  comedianId?: string
+  comedianName?: string
+
+  // Required
   container: string | HTMLElement
+  ticketUrl: string
+
+  // Optional
   theme?: 'dark' | 'light'
-  columns?: 1 | 2 | 3 | 4
   supabaseUrl?: string
   supabaseAnonKey?: string
-  // Modal/trigger options
-  triggerText?: string
-  triggerPosition?: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'
-  expandOn?: 'hover' | 'click'
+  showTicketButton?: boolean
 }
 
 export interface WidgetComedian {
@@ -18,5 +21,5 @@ export interface WidgetComedian {
   photo_url: string | null
   youtube_url: string | null
   video_url: string | null
-  ticket_url: string
+  ticket_url?: string
 }
