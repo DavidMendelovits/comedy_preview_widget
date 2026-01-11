@@ -4,7 +4,8 @@ import { supabase } from '@/lib/supabase'
 import { Comedian } from '@/lib/types'
 import Button from '@/components/ui/Button'
 import { Input, Textarea } from '@/components/ui/Input'
-import ComedianCard from '@/components/ComedianCard'
+import { WidgetCard } from '../../../widget/WidgetCard'
+import '../../../widget/styles.css'
 import VideoUpload from '@/components/VideoUpload'
 import PhotoUpload from '@/components/PhotoUpload'
 import styles from './Dashboard.module.css'
@@ -205,11 +206,10 @@ export default function ComedianDashboard() {
 
         <div className={styles.preview}>
           <h3 className={styles.previewTitle}>Preview</h3>
-          <ComedianCard
+          <WidgetCard
             comedian={previewComedian}
-            ticketUrl="#"
             showTicketButton={false}
-            showControls={true}
+            theme="dark"
           />
         </div>
       </div>
