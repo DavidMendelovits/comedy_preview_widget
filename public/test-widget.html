@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comedy Widget Test</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a1a;
+      color: white;
+      padding: 2rem;
+      margin: 0;
+    }
+    h1 {
+      margin-bottom: 2rem;
+    }
+    .widget-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Comedy Club - Featured Shows</h1>
+
+  <div id="comedy-widget" class="widget-container"></div>
+
+  <!--
+    In production, replace with your CDN URL:
+    <script src="https://cdn.example.com/comedy-widget.iife.js"></script>
+  -->
+  <script src="/widget/comedy-widget.iife.js"></script>
+  <script>
+    // Replace with your actual widget key from the club dashboard
+    ComedyWidget.init({
+      widgetKey: 'YOUR_WIDGET_KEY_HERE',
+      container: '#comedy-widget',
+      theme: 'dark',
+      columns: 3,
+      // For local development:
+      supabaseUrl: 'http://127.0.0.1:54321',
+      supabaseAnonKey: 'YOUR_ANON_KEY_HERE'
+    });
+  </script>
+</body>
+</html>
