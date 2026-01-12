@@ -1,0 +1,77 @@
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.media {
+  aspect-ratio: 16 / 9;
+  background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+}
+
+.media > * {
+  position: absolute;
+  inset: 0;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent), #ff6b6b);
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.bio {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.actions {
+  padding: 0 1rem 1rem;
+}
+
+.ticketLink {
+  display: block;
+}
+
+.uploadedVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

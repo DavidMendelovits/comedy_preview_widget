@@ -1,0 +1,33 @@
+{
+  "buildCommand": "npm run build && npm run build:widget",
+  "outputDirectory": "dist",
+  "rewrites": [
+    {
+      "source": "/widget/:path*",
+      "destination": "/widget/:path*"
+    },
+    {
+      "source": "/((?!widget/).*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/widget/(.*)",
+      "headers": [
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
+        },
+        {
+          "key": "Access-Control-Allow-Methods",
+          "value": "GET, OPTIONS"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}
